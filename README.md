@@ -1,0 +1,1 @@
+Takes results Github Jobs API, piratizes the content.  
