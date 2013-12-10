@@ -107,7 +107,7 @@ var view = function () {
 
     var search_term = $search_input.val();
 
-    $title.html("<p>Sorry matey, but no jobs were found fer <span>" + search_term + "</span>. Give a go' searchin' <span>Javascript</span> or <span>Engineer?</span></p>");
+    $title.html("<p>Sorry matey, but no jobs were found fer <span>" + search_term + "</span>. Give a go' with <span>Javascript</span> or <span>Engineer?</span></p>");
     $count.html("No results");
 
     $posting.show(); 
