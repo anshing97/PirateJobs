@@ -54,12 +54,12 @@ header {
 }
 
 header div {
-  padding-top: 15px;
+  padding-top: 18px;
 }
 
 header h1 {
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;  
 }
 
@@ -73,6 +73,7 @@ header form {
 }
 
 header input {
+  margin-top: -2px;
   padding: 5px;
 }
 
@@ -82,8 +83,6 @@ header input {
   margin-top: 100px;
   margin-bottom: 60px;
 }
-
-
 
 #count {
   margin-bottom: 10px;

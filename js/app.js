@@ -85,25 +85,31 @@ var view = function () {
   var $job_link = $('#links a');
   var $landing = $('#landing');
   var $posting = $('#posting');
+  var $has_results = $('.has-results');
 
   var render_job = function ( data ) {
 
-    $title.html('<p>Would ye be joinin\' <span>' + data.company + '</span> as a <span>' + data.title + '</span> in <span>' + data.location + '?</span>');
+    $title.html('<p>Would ye be joinin\' <span>' + data.company + '</span> as a <span>' + data.title + '</span> in <span>' + data.location + '?</span></p>');
 
     $description.empty()
                 .html(data.text);
 
     $job_link.attr('href',data.url);
 
-    $count.html("Showing " + data.index + " of " + data.total);
+    $count.html('Showing ' + data.index + ' of ' + data.total);
 
     $posting.show(); 
+    $has_results.show(); 
     $landing.hide();
   }
 
-  var render_no_results = function () {
+  var no_results = function () {
+    $title.html("<p>Sorry matey, but 0 jobs be found. Give a go' searchin' <span>Javascript</span> or <span>Engineer</span></p>");
+    $count.html("No results");
 
-
+    $posting.show(); 
+    $has_results.hide();     
+    $landing.hide();
   }
 
   var update_search = function (term) {
@@ -112,7 +118,7 @@ var view = function () {
 
   return {
     render_job: render_job, 
-    render_no_results: render_no_results, 
+    no_results: no_results, 
     update_search: update_search,
   }
 
@@ -150,8 +156,7 @@ var github_data = function () {
       index = 0; 
       view.render_job(get_job_data());
     } else {
-      view.render
-      $('#landing p').html("No results were found!");
+      view.no_results();
     }
   }
 
