@@ -81,7 +81,7 @@ var view = function () {
   var $title = $('#title');
   var $description = $('#description');
   var $count = $('#count');
-  var $header_input = $('header input');
+  var $search_input = $('header input');
   var $job_link = $('#links a');
   var $landing = $('#landing');
   var $posting = $('#posting');
@@ -104,7 +104,10 @@ var view = function () {
   }
 
   var no_results = function () {
-    $title.html("<p>Sorry matey, but 0 jobs be found. Give a go' searchin' <span>Javascript</span> or <span>Engineer</span></p>");
+
+    var search_term = $search_input.val();
+
+    $title.html("<p>Sorry matey, but no jobs were found fer <span>" + search_term + "</span>. Give a go' searchin' <span>Javascript</span> or <span>Engineer?</span></p>");
     $count.html("No results");
 
     $posting.show(); 
@@ -113,8 +116,10 @@ var view = function () {
   }
 
   var update_search = function (term) {
-    $header_input.val(term);
+    $search_input.val(term);
   }
+
+
 
   return {
     render_job: render_job, 

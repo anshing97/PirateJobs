@@ -174,11 +174,11 @@ header input {
 }
 
 #next {
-  right: -200px;
+  right: -140px;
 }
 
 #previous {
-  left: -200px;
+  left: -234px;
 }
 
 #next a, #previous a {
