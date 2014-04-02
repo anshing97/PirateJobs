@@ -105,6 +105,8 @@ header input {
   color: #CC0000;
 }
 
+
+
 #links {
   margin-bottom: 60px;
 }
@@ -208,3 +210,13 @@ header input {
   background-position: -10px -151px;
 }
 
+/* when we are searching */ 
+
+#searching span {
+  color: #CC0000;  
+}
+
+#searching {
+  font-size: 15px;
+  color: #999;
+}

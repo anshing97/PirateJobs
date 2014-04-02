@@ -2,6 +2,7 @@
 
 var pirate_talk = function () {
 
+  /* phrases we replace to pirate talk */ 
   var PHRASES = [["are","be"],
                  ["and", "n'"],
                  ["around", "aroun'"],
@@ -219,6 +220,9 @@ $(function(){
   $('form').submit(function(e){
     var val = $('input',$(this)).val();
     github_data.query(val);
+
+    $('#landing form').replaceWith("<div id='searching'>Lookin' fer jolly crews that need <span>" + val + "...</span></div>");
+
     e.preventDefault();    
   });
 
